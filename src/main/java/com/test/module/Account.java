@@ -20,14 +20,14 @@ public class Account {
 		accInfoPO = new AccountInformationPO(driver);
 	}
 
-	public void fillAccountDetails() throws InterruptedException {
+	public void fillAccountDetails(String fname, String lname, String phone, String gender) throws InterruptedException {
 		Thread.sleep(3000);
 		homePO.clickBtnMyAccount();
 		homePO.clickBtnMyAcc();
-		accInfoPO.enterTxtFirstName("Ajay");
-		accInfoPO.enterTxtLastName("Kumar");
-		accInfoPO.enterTxtPhone("9988776655");
-		accInfoPO.selectGender("Male");
+		accInfoPO.enterTxtFirstName(fname);
+		accInfoPO.enterTxtLastName(lname);
+		accInfoPO.enterTxtPhone(phone);
+		accInfoPO.selectGender(gender);
 		accInfoPO.clickBtnSubmit();
 	}
 	

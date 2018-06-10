@@ -21,12 +21,12 @@ public class Login {
 		accInfoPO = new AccountInformationPO(driver);
 	}
 
-	public void createAccount() {
+	public void createAccount(String email, String pswd, String rePswd) {
 		homePO.clickBtnMyAccount();
 		homePO.clickBtnLogin();
-		loginPO.enterTxtEmailAdress("Test"+ Utility.randomNumber() +"@gmail.com");
-		loginPO.enterTxtPassword("happy");
-		loginPO.EnterTxtReEnterPassword("happy");
+		loginPO.enterTxtEmailAdress(email+ Utility.randomNumber() +"@gmail.com");
+		loginPO.enterTxtPassword(pswd);
+		loginPO.EnterTxtReEnterPassword(rePswd);
 		loginPO.clickBtnCreateAccount();
 	}
 	

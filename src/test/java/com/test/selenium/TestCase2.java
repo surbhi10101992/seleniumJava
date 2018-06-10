@@ -23,8 +23,7 @@ public class TestCase2 extends BaseTest{
 		login = new Login(driver);
 		driver.get(Config.getProperty("url"));
 		Thread.sleep(5000);
-		login.createAccount();
-		login.goToHomePage();
+		
 	}
 	
 	
