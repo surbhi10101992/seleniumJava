@@ -1,0 +1,38 @@
+package com.test.module;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import com.test.po.AccountInformationPO;
+import com.test.po.HomePO;
+import com.test.po.LoginPO;
+
+public class Account {
+
+	WebDriver driver;
+	HomePO homePO;
+	LoginPO loginPO;
+	AccountInformationPO accInfoPO;
+
+	public Account(WebDriver driver) {
+		this.driver= driver;
+		homePO = new HomePO(driver);
+		loginPO = new LoginPO(driver);
+		accInfoPO = new AccountInformationPO(driver);
+	}
+
+	public void fillAccountDetails() throws InterruptedException {
+		Thread.sleep(3000);
+		homePO.clickBtnMyAccount();
+		homePO.clickBtnMyAcc();
+		accInfoPO.enterTxtFirstName("Ajay");
+		accInfoPO.enterTxtLastName("Kumar");
+		accInfoPO.enterTxtPhone("9988776655");
+		accInfoPO.selectGender("Male");
+		accInfoPO.clickBtnSubmit();
+	}
+	
+	public void validateAccount(String expName) {
+		String actName = homePO.getTextLblAccName();
+		Assert.assertEquals(actName.replace("Hi ",""),expName);
+	}
+}

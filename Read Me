@@ -1,0 +1,6 @@
+Read Me :
+----------------------------
+Step To follow :
+1. Every PO class, i.e. classes under "com.test.po" should extend itself by "Action" class.
+2. Every Test class, i.e. classes under "com.test.selenium" should extend itself by "BaseTest" class.
+3. Set config File name in BaseTest class in config constructor.
